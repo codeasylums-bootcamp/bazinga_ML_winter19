@@ -7,9 +7,9 @@ driver.get("https://www.trainspnrstatus.com/")
 
 from selenium.webdriver.common.by import By
 
-while s=input("Enter PNR"):
-    element = driver.find_element_by_id('fullname').send_keys(s)
-    element = driver.find_element_by_id('idbtn').click()
+s='2750486273'
+element = driver.find_element_by_id('fullname').send_keys(s)
+element = driver.find_element_by_id('idbtn').click()
 
 
 # element=driver.find_element_by_id('indiGoFlightSchedule.Origin')
