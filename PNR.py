@@ -15,26 +15,21 @@ from selenium.webdriver.common.by import By
 element = driver.find_element_by_id('fullname').send_keys(s)
 element = driver.find_element_by_id('idbtn').click()
 
-table_id = driver.find_element_by_class_name('table')
-rows = table_id.find_element_by_tag_name("tr") # get all of the rows in the table
-print(str(rows))
+# import requests
+# import urllib.request
+# from bs4 import BeautifulSoup
 
-url = "https://www.trainspnrstatus.com/pnrformcheck.php"
-r= requests.get(url)
-def text(elt):
-    return elt.text_content().replace(u'\xa0', u' ')
-
-url = 'https://www.trainspnrstatus.com/pnrformcheck.php'
-r = requests.get(url)
-root = LH.fromstring(r.content)
-
-for table in root.xpath('//table[@id="td"]'):
-    header = [text(th) for th in table.xpath('//th')]        # 1
-    data = [[text(td) for td in tr.xpath('td')]  
-            for tr in table.xpath('//tr')]                   # 2
-    data = [row for row in data if len(row)==len(header)]    # 3 
-    data = pd.DataFrame(data, columns=header)                # 4
-    print(data)
+# url = "https://www.trainspnrstatus.com/pnrformcheck.php"
+# r = requests.get(url)
+# l = []
+# html_content = r.text
+# soup = BeautifulSoup(html_content,"html.parser")
+# link = soup.find("table",{"class":"wikitable"})
+# z=link.find_all("tr")
+# for i in z:
+#     print(i)
+#     print("------------------------")
+#     l.append(i)
+    #each row is in l
 
 # driver.quit()
-     
