@@ -13,8 +13,6 @@ try:
 except ImportError:
     flags = None
 import auth
-# If modifying these scopes, delete your previously saved credentials
-# at ~/.credentials/drive-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/drive'
 CLIENT_SECRET_FILE = '/home/mudit/Desktop/bazinga_ML_winter19/drivepush/client_secret.json'
 APPLICATION_NAME = 'Drive API Python Quickstart'
@@ -32,7 +30,10 @@ def uploadFile(filename,filepath,mimetype):
     file = drive_service.files().create(body=file_metadata,
                                         media_body=media,
                                         fields='id').execute()
-    print('File ID: %s' % file.get('id'))
+    print("File Uploaded")
 
 path_var = input("Enter path to file: ")
-uploadFile(path_var,path_var,'image/jpeg')
+val = path_var.split('/')
+f_name= val[-1]
+print("File name is ",f_name)
+uploadFile(f_name,path_var,'image/jpeg')

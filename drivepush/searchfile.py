@@ -13,8 +13,6 @@ try:
 except ImportError:
     flags = None
 import auth
-# If modifying these scopes, delete your previously saved credentials
-# at ~/.credentials/drive-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/drive'
 CLIENT_SECRET_FILE = '/home/mudit/Desktop/bazinga_ML_winter19/drivepush/client_secret.json'
 APPLICATION_NAME = 'Drive API Python Quickstart'
